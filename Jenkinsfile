@@ -1,14 +1,12 @@
 pipeline {
-    agent { docker 
-           { image 'python:3.5.1'
-             args '-i --entrypoint='
-           }
-          }
+    agent {
+        docker { image 'node:14-alpine' }
+    }
     stages {
         stage('Test') {
             steps {
-                sh 'python --version'
+                sh 'node --version'
             }
         }
     }
-}
+
